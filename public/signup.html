@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Create User!</title>
+  </head>
+  <style>
+
+          body{
+
+           max-zoom: 80%; 
+          }
+            .rd
+            {
+                text-align: center;
+                margin-top: 15px;
+                color: rebeccapurple !important;
+                letter-spacing: 2px;
+            }
+
+             .error
+            {
+              @extend .rd;
+
+              color: red !important;
+            }
+            .error-li
+            {
+              color: rebeccapurple !important;
+              margin-left: 10px;
+            }
+           
+            .btn-o{
+
+                    width: 100% !important;
+                    color: #fff;
+                    background-color: #198754;
+                    border-color: #198754;
+                    margin-top: 14px;
+                    padding-bottom: 11px;
+                }
+
+
+
+            
+  </style>
+  <body>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-sm-4"></div>
+                 <div class="col-sm-4" style="float: right; margin:40px 0px 25px 0px ;">
+             <h4 class="rd">Register</h4>
+             
+             <p v-if="errors.length" class="rd error">
+              <b>Please correct the following error(s):</b>
+              <ul>
+                <li v-for="error in errors" class="error-li">{{ error }}</li>
+              </ul>
+            </p>
+             <hr>
+            <form method="#" @submit="checkForm">
+              
+              <div class="sm-3">
+                <label class="form-label">FullName</label>
+                <input type="text" class="form-control" v-model="fname" >
+              </div>
+                
+                <div class="sm-3">
+                  <label class="form-label">Email Address</label>
+                  <input type="text" class="form-control" v-model="email" >
+               
+                </div>
+                <div class="sm-3">
+                    <label class="form-label">Password</label>
+                    <input type="text" class="form-control" v-model="password" >
+                    
+                  </div>
+                  <div class="sm-3">
+                    <label class="form-label">status </label>
+                    <input type="text" class="form-control" v-model="status ">
+                   
+                  </div>
+        
+                  <div class="sm-3">
+                    <label class="form-label">Street </label>
+                    <input type="text" class="form-control" v-model="Street">
+                 
+                  </div>
+                  <div class="sm-3">
+                    <label class="form-label">Pincode </label>
+                    <input type="text" class="form-control" v-model="pincode ">
+                
+                  </div>
+                
+                 <input type="submit" class="btn-o" value="submit" >
+              </form>
+              
+         <div id="#">
+
+        
+
+         </div>
+        </div>
+        </div>
+    </div>
+    
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+      fname:'',    
+      email: '',
+  password:'',
+  pincode:'',
+  status:'',
+  Street:'',
+
+
+
+ 
+  errors:[],
+   
+   item : []
+
+        
+            
+           },
+        methods: {
+
+               checkForm: function (e) {
+                if (this.email && this.password) {
+
+               
+            axios.post('/postman/data',{
+              
+              fname:this.fname,
+              email:this.email,
+              password:this.password,
+              pincode:this.pincode,
+              street:this.street,
+              status:this.status})
+              .then(response => 
+              {
+              this.item.push(response.data)
+
+             
+ 
+                           
+                      });
+                  
+                  return true;
+                }
+
+                this.errors = [];
+
+                if (!this.email) {
+                  this.errors.push('Email required.');
+                  console.log(this.email);
+                }
+                if (!this.passsword) {
+                  this.errors.push('Password required.');
+                }
+                if(!this.fname)
+                {
+                  this.errors.push('firstName');
+                }
+                if(!this.Street)
+                {
+                  this.errors.push(' invalid street ');
+
+                }
+                if(!this.pincode)
+                {
+                  this.errors.push('pincode not valid ');
+                }
+                
+
+                e.preventDefault();
+             
+             
+             
+              }
+
+            
+       },
+        mounted() {
+                  
+            console.log('i am ready..');
+        }
+    }); 
+  </script>
+
+  </html>
+
+  
