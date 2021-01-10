@@ -8,10 +8,18 @@ body {
 
  
 
-@media (min-width:360px) { 
+@media (max-width:420px) { 
 
+  .nav-link {
+    display: block;
+    padding: 10px !important;
+    text-decoration: none;
+    
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    float: left !important;
 
  }
+}
 
 
 /*
@@ -23,13 +31,7 @@ a {
   border-color: purple;
 }
 
-.nav-box-size
-{
 
-  /* padding-bottom: 30px; */
-  padding-left: 50px;
-
-}
 
 .nav-box-size ul li
 {
@@ -62,6 +64,7 @@ padding-right: 25px;
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
     float: right;
+    
 }
 .navbar {
  
