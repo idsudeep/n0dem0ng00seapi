@@ -141,7 +141,7 @@ async (req,res)=>
             }
         };
 
-        console.log(payload);
+       
         jwt.sign(
           payload,
           "randomString",
@@ -167,6 +167,8 @@ async (req,res)=>
 });
 
 
+
+
 router.get("/self",auth , async(req,res)=>{
 
 try{
@@ -180,4 +182,20 @@ try{
 }
 
 });
+
+router.get("/userAuth",auth , async(req,res)=>{
+
+  try{
+  
+    const user = await User.findById(req.user.id);
+  
+    res.json(user);
+  }catch(e)
+  {
+    res.send({message:"error in self api"});
+  }
+  
+  });
+
+
 module.exports = router;
