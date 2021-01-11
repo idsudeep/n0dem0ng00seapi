@@ -79,3 +79,21 @@ padding-right: 25px;
 
   margin:0px;
 }
+#extra-menu
+{
+  color: black;
+  background-color: #06040903;
+  width: 363px;
+  height: 363px;
+  margin-top: 3px;
+  
+}
+
+/* 
+ color: black;
+  background-color: #06040903;
+  width: 363px;
+  height: 363px;
+  margin-top: 3px;
+
+*/

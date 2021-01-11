@@ -63,14 +63,25 @@
               <img src="images/logo.JPG" width="280px" height="119px">
              </div>
      
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" id="menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
      
           </nav>    
-           </div>
-           <div class="row">
+           </div>  
+<!-- End of row |header -->
            
+           <div class="row">
+           <div id="extra-menu" style="display:none ;">
+
+             
+              </li>
+         
+             </ul>
+
+           </div>
+           <div class="right-pannel">
+
 
            </div>
 
@@ -82,9 +93,32 @@
       
         
       </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
  
 
   </html>
 
   
+  <script>
+
+      var extra_menu = $('div#extra-menu');
+
+      $('#menu-button').click(
+        
+      function(e)
+
+      {
+        e.preventDefault();
+        if(extra_menu.is(":visible"))
+        {
+          extra_menu.slideUp(3000);
+        }
+        else{
+
+          extra_menu.slideDown(3000);
+          console.log('else');
+        }
+      });
+
+  </script>
