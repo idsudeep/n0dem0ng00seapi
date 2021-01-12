@@ -31,14 +31,28 @@ a {
   border-color: purple;
 }
 
-
-
-.nav-box-size ul li
-{
+.nav-box-size ul {
+  padding-left: 0rem;
   list-style: none;
   padding-inline: 12px;
-
 }
+
+#loc-img
+{
+  color: #ffc144;
+  width: 13px;
+}
+
+#loc
+{
+  padding: 2px;
+  color: #ffc144;
+  font-family: monospace;
+  letter-spacing: 0.2px;
+  font-size: 14px;
+}
+ 
+
 #navbarDarkDropdownMenuLink {
   padding-left: 28px;
   float: right;
@@ -54,6 +68,8 @@ a {
   text-align: center;
   background-color: forestgreen;
 }
+
+
 #logo-part{
 
 float: left;
@@ -66,6 +82,12 @@ padding-right: 25px;
     float: right;
     
 }
+
+.self
+{
+  margin-right: 2px;
+}
+
 .navbar {
  
   
@@ -97,3 +119,50 @@ padding-right: 25px;
   margin-top: 3px;
 
 */
+
+.left-sec
+{
+
+  height: 355px;
+  width: 399px;
+  margin-top:6px;
+  margin-left: 6px;
+  background-color: rgb(184 134 11 / 1%);
+ 
+}
+
+
+
+#advan-search
+{
+    padding-top: 8px;
+   
+    font-family: monospace;
+    text-align: center;
+    
+}
+#advan
+{
+  font-size: 30px;
+  color:#ffc107;
+  
+}
+#span-search
+{
+ font-size: 26px;
+ color:#0c9a9ab3;
+}
+
+#span-serve
+{
+  font-size: 20px !important;
+  color: #6c757d;
+ 
+  
+}
+
+
+.left-sec .card-body {
+  flex: 1 1 auto;
+  padding: 7px 1px;
+}

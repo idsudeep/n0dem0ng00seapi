@@ -25,9 +25,14 @@
           <div class="collapse" id="navbarToggleExternalContent">
             
              <div class="nav-box-size">
-              <button type="button" class="btn btn-outline-warning">Login</button>
+              <button type="button" class="btn btn-outline-warning ">Login</button> 
+              <button type="button" class="btn btn-outline-secondary self">Create</button>
               
-             <ul class="ul-list">
+                <span><img src="svg/location.svg" alt="location" id="loc-img"></span><span id="loc"></span>
+  
+  
+
+              <ul class="ul-list">
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,31 +68,50 @@
               <img src="images/logo.JPG" width="280px" height="119px">
              </div>
      
-              <button class="navbar-toggler" id="menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" id="menu-button-remove" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
      
           </nav>    
            </div>  
+     
 <!-- End of row |header -->
            
            <div class="row">
-           <div id="extra-menu" style="display:none ;">
-
-             
-              </li>
-         
-             </ul>
-
-           </div>
-           <div class="right-pannel">
+            <div id="extra-menu" style="display:none ;">
+            </div>
+<!-- end of extra-menu -->
+           
 
 
-           </div>
+            
 
          </div>
 
-        </div>
+        </div> 
+        <!-- end of main container -->
+        
+        <div class="row">
+
+          <div class="left-sec">
+
+          
+            <div class="card-body">
+              <div id="advan-search">
+                <span id="advan">Advantageous</span> <span id="span-search"> Search</span> 
+                <br/>
+                   <span id="span-serve"> 'We Serve As Your Expectation'</span>
+                     
+               </div>
+               <div class="quick-service">
+
+                
+               </div>
+            </div>
+          </div>
+          </div>
+          
+        
         
       
       
@@ -109,7 +133,7 @@
       function(e)
 
       {
-        e.preventDefault();
+       
         if(extra_menu.is(":visible"))
         {
           extra_menu.slideUp(3000);
@@ -120,5 +144,69 @@
           console.log('else');
         }
       });
+
+
+
+ 
+const countryCodeExpression = /loc=([\w]{2})/;
+const userIPExpression = /ip=([\w\.]+)/;
+
+
+function initCountry() {
+    return new Promise((resolve, reject) => {
+        var xhr = new XMLHttpRequest();
+        xhr.timeout = 3000;
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    countryCode = countryCodeExpression.exec(this.responseText)
+                    ip = userIPExpression.exec(this.responseText)
+                    if (countryCode === null || countryCode[1] === '' ||
+                        ip === null || ip[1] === '') {
+                        reject('IP/Country code detection failed');
+                    }
+                    let result = {
+                        "countryCode": countryCode[1],
+                        "IP": ip[1]
+                    };
+                    resolve(result)
+                } else {
+                    reject(xhr.status)
+                }
+            }
+        }
+        xhr.ontimeout = function () {
+            reject('timeout')
+        }
+        xhr.open('GET', 'https://www.cloudflare.com/cdn-cgi/trace', true);
+        xhr.send();
+    });
+}
+
+initCountry().then(result => 
+{
+   
+
+  console.log(result.countryCode);
+
+  if(result.countryCode == 'IN')
+  {
+    document.getElementById('loc').innerHTML='India';
+    console.log('k')
+  }
+  if(result.countryCode=='AU')
+  {
+    document.getElementById('loc').innerHTML+="Australia";
+  }
+  if(result.countryCode=='NP')
+  {
+    document.getElementById('loc').innerHTML='Nepal';
+  }
+  else{
+    
+  }
+}
+).catch(e => console.log(e))
+
 
   </script>
