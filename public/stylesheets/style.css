@@ -3,6 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin-top: 2px;
   color: black;
+  width: 100%;
 }
   
 
@@ -77,7 +78,7 @@ padding-right: 25px;
 
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+.btn [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
     float: right;
     
@@ -95,6 +96,12 @@ padding-right: 25px;
   padding-right: 1rem !important;
   padding-left: 0rem !important;
   padding-top: 0rem !important;
+}
+.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 6px;
+  line-height: 1;
+  background-color: transparent;
 }
 .ul-list
 {
@@ -165,4 +172,110 @@ padding-right: 25px;
 .left-sec .card-body {
   flex: 1 1 auto;
   padding: 7px 1px;
+}
+
+.quick-service #quick-img
+{
+  padding-left: 25px;
+  padding-top: 21px;
+  width: 100%;
+  
+}
+
+#simple
+{
+  color: cadetblue;
+  margin-top:12px;
+  font-size: x-large;
+
+}
+.img-setS
+{
+  width: 100%;
+  height: auto;
+  padding-top: 2px;
+ 
+}
+
+
+.img-center
+{
+
+  padding-top: 8px;
+
+  padding-left: 70px;
+  
+}
+.outline-btn
+
+{
+
+  background-color: transparent;
+  color: cadetblue;
+  width: 51%;
+  margin-right: 28px;
+  margin: auto;
+  border-color: aliceblue;
+}
+
+.grid-self
+{
+  width: 90%;
+    height: auto;
+    padding-top: 18px;
+    padding-left: 0px;
+    margin-left: 45px;
+}
+
+
+.col-1{
+
+  width: 40%;
+  
+   height:70px;
+   float: left;
+   border: 1px solid #ffc144;
+   border-right-style: hidden;
+   border-bottom-style:hidden;
+}
+.col-2{
+
+  width: 40%;
+  
+   height:70px;
+   float: left;;
+   border: 1px solid #ffc144;
+ 
+   border-bottom-style: hidden;
+  
+}
+
+
+.header-box-left
+{
+  width: 100%;
+  background-color:#ffc144c2;
+  height: 35px;
+
+}
+
+
+.header-box-right
+{
+  width: 100%;
+  background-color:#ffc144;
+  height: 35px;
+}
+
+#vac
+{
+  color: #fefefc;
+  font-size: 20px;
+  margin-left: 15px;
+}
+#occ
+{
+  color:rgb(177, 22, 55);
+  font-size: 20px;
+  margin-left: 14px ;
 }
