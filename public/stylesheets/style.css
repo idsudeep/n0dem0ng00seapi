@@ -7,7 +7,7 @@ body {
 }
   
 
- 
+ /* own device */
 
 @media (max-width:420px) { 
 
@@ -30,6 +30,7 @@ a {
   color: #09101a4d;
   letter-spacing: 2px;
   border-color: purple;
+  text-decoration: none !impo;
 }
 
 .nav-box-size ul {
@@ -96,6 +97,7 @@ padding-right: 25px;
   padding-right: 1rem !important;
   padding-left: 0rem !important;
   padding-top: 0rem !important;
+  display: flex;
 }
 .navbar-toggler {
   padding: .25rem .75rem;
@@ -130,7 +132,7 @@ padding-right: 25px;
 .left-sec
 {
 
-  height: 355px;
+  
   width: 399px;
   margin-top:6px;
   margin-left: 6px;
@@ -278,4 +280,77 @@ padding-right: 25px;
   color:rgb(177, 22, 55);
   font-size: 20px;
   margin-left: 14px ;
+}
+
+
+
+
+
+#hr-1
+{
+  margin: 1px 0 !important;
+  
+    opacity: 0.12 !important;
+}
+#message
+{
+  width: 100%;
+  height: 120px;
+  background-color: brown;
+  float:right;
+  margin-top: 3px;
+
+}
+.link-owner
+
+{
+  margin-top: 15px;
+  float: left;
+ 
+}
+
+#cre
+{
+  font-family: monospace;
+    color: cornflowerblue;
+    font-size: x-large;
+    font-style: inherit;
+    padding-left: 20px;
+}
+#acc
+{
+  color: cadetblue;
+  font-size: large;
+  font-family: cursive;
+  font-variant-caps: titling-caps;
+}
+#holder
+{
+  font-size: medium;
+  color: darkgoldenrod;
+  font-family: system-ui;
+  border: 1px solid #ffc144;
+}
+
+#holder:hover
+{
+  
+  color: rgb(192, 184, 164);
+  
+}
+
+
+
+
+
+
+/*  */
+
+.footer-down
+{
+  position: fixed;
+  width: 100%;
+  height:30px;
+  background-color: aquamarine;
+  bottom: 0;
 }
