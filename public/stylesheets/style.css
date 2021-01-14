@@ -4,6 +4,8 @@ body {
   margin-top: 2px;
   color: black;
   width: 100%;
+  overflow-y: auto;
+  
 }
   
 
